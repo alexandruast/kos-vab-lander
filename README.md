@@ -24,7 +24,7 @@ You can also put drogue chutes and/or airbrakes, then enable airbrakes in code:
 set aerobraking_enabled to true.
 ```
 
-Demo video: https://www.youtube.com/watch?v=eU0OfJBgCrs
+Demo video: https://www.youtube.com/watch?v=eU0OfJBgCrs  
 Reddit: https://github.com/alexandruast/kos-vab-lander
 
 Have fun!
