@@ -42,12 +42,13 @@ if aerobraking_enabled {
 
 
 until do_exit {
-  if altitude < 60000 and periapsis < 0 and throttle = 0 {
 
-    if missiontime - current_time > tick_time {
-      set current_time to missiontime.
-      clearscreen.
+  if missiontime - current_time > tick_time {
+    set current_time to missiontime.
+    clearscreen.
 
+    if altitude < 50000 and periapsis < 0 and throttle = 0 {
+      
       if not steering_control_triggered {
         SAS OFF.
         RCS ON.
@@ -108,9 +109,11 @@ until do_exit {
           GEAR ON.
           LEGS ON.
           
+          unlock STEERING.
           SAS ON.
           wait time_buffer.
           SET SASMODE to "RETROGRADE".
+          
           print "[info] doing suicide burn...".
           until -VERTICALSPEED < suicide_burn_until_v {
             local g is body:mu / (body:radius + altitude)^2.
@@ -128,6 +131,7 @@ until do_exit {
           }
 
           print "[info] gently touching down...".
+          SAS OFF.
           lock steering to lookdirup(ship:up:forevector,ship:facing:upvector).
           until ship:status = "LANDED" or ship:status = "SPLASHED" {
             if maxthrust > 0 and VERTICALSPEED < 0 {
@@ -162,10 +166,10 @@ until do_exit {
       print "[info] ground speed: " + groundspeed.
 
       set prev_dto_landingsite_impact to dto_landingsite_impact.
-    }
-  } else {
-    print "[info] waiting for things to happen...".
-    wait 1.
+    } else {
+      print "[info] waiting for altitude < 50000m, periapsis < 0m and zero throttle...".
+      wait 1.
+    } 
   }
 }
 
