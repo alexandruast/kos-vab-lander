@@ -7,7 +7,7 @@
 
 Steps:
   - put the .ks files in Ships/Script directory.
-  - create a rocket with 4 control fins at the bottom, and with about 600 dV
+  - create a rocket with 3 or 4 control fins at the bottom, and with about 600 dV
   - set your rocket to orbit using the debug menu: cheats -> set orbit
   - perform a retrograde burn visually assisted by trajectories mod, so that
     the impact point is above KSC.
