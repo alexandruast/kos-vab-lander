@@ -25,6 +25,6 @@ set aerobraking_enabled to true.
 ```
 
 Demo video: https://www.youtube.com/watch?v=eU0OfJBgCrs  
-Reddit: https://github.com/alexandruast/kos-vab-lander
+Reddit: https://www.reddit.com/r/Kos/comments/9qzvq4/glide_towards_and_land_on_the_vab_from_orbit/
 
 Have fun!
